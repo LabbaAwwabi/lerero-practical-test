@@ -1,9 +1,11 @@
-import { ForbiddenException, Injectable, NotAcceptableException } from "@nestjs/common";
+import {
+  Injectable,
+  NotAcceptableException,
+  UnprocessableEntityException
+} from "@nestjs/common";
 import { User } from './schemas/user.schema';
 import { UserRepository } from './user.repository';
 import { UserRegisterDto } from './dto/user.register.dto';
-import { v4 as uuidv4 } from 'uuid';
-import mongoose from "mongoose";
 
 @Injectable()
 export class UserCommand {
@@ -16,6 +18,10 @@ export class UserCommand {
       throw new NotAcceptableException(`User with username '${user.username}' already registered`);
     }
 
-    return this.userRepository.create(userRegisterDto);
+    try {
+      return this.userRepository.create(userRegisterDto);
+    } catch (e) {
+      throw new UnprocessableEntityException(`Data cannot be processed`)
+    }
   }
 }
