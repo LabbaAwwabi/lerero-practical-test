@@ -25,12 +25,20 @@ export class AuthService {
 
   async login(loginDto: LoginDto) {
     const user = await this.validateUser(loginDto.username, loginDto.password);
-    console.log(user);
+
     const payload = { username: user.username, profile: user.profile, sub: user._id };
 
     return {
       token: this.jwtService.sign(payload),
       profile: user.profile,
+    };
+  }
+
+  async logout(token: string) {
+   // TODO: blacklist token
+
+    return {
+      message: `logout success`
     };
   }
 }
