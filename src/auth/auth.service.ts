@@ -13,13 +13,9 @@ export class AuthService {
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.userQuery.getByUsername(username);
 
-    if (!user) {
-      throw new NotFoundException(`User with username ${username} is not exists!`);
-    }
-
     // TODO: implement bcrypt
-    if (user.password !== pass) {
-      throw new UnauthorizedException(`Password invalid!`);
+    if (!user || user.password !== pass) {
+      throw new UnauthorizedException(`invalid login`);
     }
 
     delete user.password;
