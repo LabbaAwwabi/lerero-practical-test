@@ -1,9 +1,8 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
 import { UserCommand } from './user.command';
 import { UserQuery } from './user.query';
 import { UserRegisterDto } from './dto/user.register.dto';
-import { Roles } from "../roles/decorators/roles.decorator";
-import { Role } from "../roles/enums/role.enum";
+import { JwtAuthGuard } from "../auth/jwt-auth.guard";
 
 @Controller()
 export class UserController {
@@ -12,13 +11,13 @@ export class UserController {
     private readonly userQuery: UserQuery
   ) {}
 
-  @Post('/v1/user')
-  @Roles(Role.Board)
+  @UseGuards(JwtAuthGuard)
+  @Post('/v1/users')
   async registerUser(@Body() userRegisterDto: UserRegisterDto) {
     return this.userCommand.create(userRegisterDto);
   }
 
-  @Get('/user/:username')
+  @Get('/users/:username')
   async findByUsername(@Param('username') username: string) {
     return this.userQuery.getByUsername(username)
   }
