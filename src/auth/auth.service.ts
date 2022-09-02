@@ -1,16 +1,13 @@
-import { Injectable, Logger, NotFoundException, UnauthorizedException } from "@nestjs/common";
-import { UserQuery } from '../users/user.query';
+import { Injectable, Logger, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { LoginDto } from "./dto/login.dto";
+import { UserQuery } from '../users/user.query';
+import { LoginDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private userQuery: UserQuery,
-    private jwtService: JwtService
-  ) {}
+  constructor(private userQuery: UserQuery, private jwtService: JwtService) {}
 
-  async validateUser(username: string, pass: string): Promise<any> {
+  async validateUser(username: string, pass: string) {
     const user = await this.userQuery.getByUsername(username);
 
     // TODO: implement bcrypt
@@ -26,19 +23,25 @@ export class AuthService {
   async login(loginDto: LoginDto) {
     const user = await this.validateUser(loginDto.username, loginDto.password);
 
-    const payload = { username: user.username, profile: user.profile, sub: user._id };
+    const payload = {
+      username: user.username,
+      profile: user.profile,
+      sub: user._id,
+    };
+    const token = this.jwtService.sign(payload);
+    const profile = user.profile;
 
     return {
-      token: this.jwtService.sign(payload),
-      profile: user.profile,
+      token,
+      profile,
     };
   }
 
   async logout(token: string) {
-   // TODO: blacklist token
+    // TODO: blacklist token
 
     return {
-      message: `logout success`
+      message: `logout success`,
     };
   }
 }

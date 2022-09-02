@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from './schemas/user.schema';
-import { UserRegisterDto } from "./dto/user.register.dto";
 import { Model } from 'mongoose';
+import { UserRegisterDto } from './dto/user-register.dto';
+import { User, UserDocument } from './schemas/user.schema';
 
 @Injectable()
 export class UserRepository {
@@ -18,6 +18,6 @@ export class UserRepository {
   }
 
   async findByToken(token: string): Promise<User> {
-    return this.userModel.findOne({ }).where('token').equals(token);
+    return this.userModel.findOne({}).where('token').equals(token);
   }
 }
