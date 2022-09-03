@@ -1,19 +1,23 @@
-import { IsEmail, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { Skill } from "../../skills/schema/skill.schema";
 
 export class UserRegisterDto {
-  @IsString()
+  @IsNotEmpty()
   readonly name: string;
 
   @IsEmail()
-  @IsString()
+  @IsNotEmpty()
   readonly email: string;
 
-  @IsString()
+  @IsNotEmpty()
   readonly username: string;
 
-  @IsString()
+  @IsNotEmpty()
   readonly password: string;
 
-  @IsString()
+  @IsNotEmpty()
   readonly profile: string;
+
+  @IsNotEmpty()
+  readonly skill: Skill[];
 }

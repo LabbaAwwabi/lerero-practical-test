@@ -5,7 +5,6 @@ import { User, UserSchema } from './schemas/user.schema';
 import { UserCommand } from './user.command';
 import { UserQuery } from './user.query';
 import { UserController } from './user.controller';
-import { AuthModule } from "../auth/auth.module";
 import { JwtModule } from "@nestjs/jwt";
 import { jwtConstants } from "../auth/constants";
 

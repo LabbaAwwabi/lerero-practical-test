@@ -1,23 +1,25 @@
 import {
   Body,
   Controller,
-  Get,
+  Get, Logger,
   Param,
-  Post,
-  Query,
-  UnauthorizedException,
-} from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
+  Post
+} from "@nestjs/common";
 import { UserRegisterDto } from './dto/user-register.dto';
 import { UserCommand } from './user.command';
 import { UserQuery } from './user.query';
+import { Roles } from "../auth/role/roles.decorator";
+import { Role } from "../auth/enums/role.enum";
 
 @Controller('v1/user')
 export class UserController {
   constructor(private userCommand: UserCommand, private userQuery: UserQuery) {}
 
   @Post()
+  @Roles(Role.Board)
   async registerUser(@Body() userRegisterDto: UserRegisterDto) {
+    let logger = new Logger()
+    logger.log(userRegisterDto)
     return this.userCommand.create(userRegisterDto);
   }
 

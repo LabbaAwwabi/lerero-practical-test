@@ -13,7 +13,6 @@ export class AuthController {
     return this.authService.login(loginDto);
   }
 
-  // @UseGuards(JwtAuthGuard)
   @Post('/logout')
   async logout(@Query('token') token) {
     return this.authService.logout(token);
