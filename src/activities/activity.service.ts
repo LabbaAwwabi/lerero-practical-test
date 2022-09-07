@@ -51,7 +51,6 @@ export class ActivityService {
 
   async findBySkillID(skillID: string) {
     const skill = await this.skillService.findOne(skillID);
-    console.log(skill);
 
     if (!skill) {
       return

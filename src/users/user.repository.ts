@@ -23,7 +23,6 @@ export class UserRepository {
   }
 
   async update(userUpdateSkillDto: UserUpdateSkillDto) {
-    console.log(userUpdateSkillDto);
     return this.userModel.findOneAndUpdate({ username: userUpdateSkillDto.username }, userUpdateSkillDto, { new: false })
       .populate('skill');
   }
