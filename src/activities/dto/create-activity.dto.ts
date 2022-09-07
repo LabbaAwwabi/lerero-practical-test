@@ -1,4 +1,4 @@
-import { IsDate, IsNotEmpty, IsString } from "class-validator";
+import { IsArray, IsDate, IsNotEmpty, IsString } from "class-validator";
 import { Transform } from "class-transformer";
 
 export class CreateActivityDto {
@@ -21,6 +21,6 @@ export class CreateActivityDto {
   @IsDate()
   readonly enddate: Date;
 
-  @IsNotEmpty()
-  readonly participants: string;
+  @IsArray()
+  readonly participants: string[];
 }

@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "63189ae975cd6ad7d8eaabfc"
+  },
+  "skill": "coding",
+  "title": "golang expert",
+  "description": "hackaton 5 hari",
+  "startdate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "enddate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "participants": [
+    "fan",
+    "labba"
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6318a166dfb15a58405a70ba"
+  },
+  "skill": "running",
+  "title": "run together",
+  "description": "lari lari lari",
+  "startdate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "enddate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "participants": [
+    "fan",
+    "labba"
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6318a198b15121238793b9f3"
+  },
+  "skill": "running",
+  "title": "run together",
+  "description": "lari lari lari",
+  "startdate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "enddate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "participants": [
+    "fan",
+    "labba"
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6318a1c54bff311482d2d5cd"
+  },
+  "skill": "running",
+  "title": "run together",
+  "description": "lari lari lari",
+  "startdate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "enddate": {
+    "$date": {
+      "$numberLong": "1661990400000"
+    }
+  },
+  "participants": [
+    "fan",
+    "labba"
+  ],
+  "__v": 0
+}]

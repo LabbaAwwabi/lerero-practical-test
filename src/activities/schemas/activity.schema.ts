@@ -36,7 +36,7 @@ export class Activity {
   @Prop({
     required: true,
   })
-  participants: string;
+  participants: string[];
 }
 
 export const ActivitySchema = SchemaFactory.createForClass(Activity);

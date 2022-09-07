@@ -35,11 +35,11 @@ export class User {
   profile: UserProfileType;
 
   @Prop({
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Skill',
-    required: false,
+    // type: mongoose.Schema.Types.ObjectId,
+    // ref: 'Skill',
+    required: true,
   })
-  skill: Skill[];
+  skill: string[]; // Skill[];
 
   @Prop()
   token: string;

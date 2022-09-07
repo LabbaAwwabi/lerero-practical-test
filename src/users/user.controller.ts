@@ -18,8 +18,6 @@ export class UserController {
   @Post()
   @Roles(Role.Board)
   async registerUser(@Body() userRegisterDto: UserRegisterDto) {
-    let logger = new Logger()
-    logger.log(userRegisterDto)
     return this.userCommand.create(userRegisterDto);
   }
 

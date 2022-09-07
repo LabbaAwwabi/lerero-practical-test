@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "63186fa6af9b41980bef1d5b"
+  },
+  "name": "awwabi",
+  "email": "awwabi@gmail.com",
+  "username": "awwabi",
+  "password": "123456",
+  "profile": "board"
+},{
+  "_id": {
+    "$oid": "631899e275cd6ad7d8eaabec"
+  },
+  "name": "fan",
+  "email": "fan@gmail.com",
+  "username": "fan",
+  "password": "123456",
+  "profile": "expert",
+  "skill": [
+    "coding",
+    "bodyswimming",
+    "running"
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63189a8d75cd6ad7d8eaabf6"
+  },
+  "name": "labba",
+  "email": "labba@gmail.com",
+  "username": "labba",
+  "password": "123456",
+  "profile": "expert",
+  "skill": [
+    "coding",
+    "salto",
+    "running"
+  ],
+  "__v": 0
+}]

@@ -7,6 +7,7 @@ import { UserQuery } from './user.query';
 import { UserController } from './user.controller';
 import { JwtModule } from "@nestjs/jwt";
 import { jwtConstants } from "../auth/constants";
+import { SkillModule } from "../skills/skill.module";
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { jwtConstants } from "../auth/constants";
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '1d' },
     }),
+    SkillModule,
   ],
   controllers: [UserController],
   providers: [UserCommand, UserQuery, UserRepository],

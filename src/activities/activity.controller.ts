@@ -7,7 +7,7 @@ import { Role } from "../auth/enums/role.enum";
 
 @Controller('v1/activity')
 export class ActivityController {
-  constructor(private readonly activitiesService: ActivityService) {}
+  constructor(private activitiesService: ActivityService) {}
 
   @Post()
   @HttpCode(200)
@@ -18,9 +18,9 @@ export class ActivityController {
     return "create success";
   }
 
-  @Get()
-  findAll() {
-    return this.activitiesService.findAll();
+  @Get(':skill_id')
+  findAll(@Param('skill_id') skillID: string) {
+    return this.activitiesService.findBySkillID(skillID);
   }
 
   @Get(':id')

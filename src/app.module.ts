@@ -8,7 +8,7 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { UserModule } from './users/user.module';
 import { ActivityModule } from './activities/activity.module';
 import { RolesGuard } from "./auth/role/roles.guard";
-import { SkillsModule } from './skills/skills.module';
+import { SkillModule } from './skills/skill.module';
 
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { SkillsModule } from './skills/skills.module';
     AuthModule,
     UserModule,
     ActivityModule,
-    SkillsModule,
+    SkillModule,
   ],
   controllers: [AppController],
   providers: [

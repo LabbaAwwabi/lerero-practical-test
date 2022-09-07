@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Query } from '@nestjs/common';
+import { Body, Controller, HttpCode, Post, Query, UnprocessableEntityException } from "@nestjs/common";
 import { Public } from '../commons/decorators/public.decorator';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
@@ -14,6 +14,7 @@ export class AuthController {
   }
 
   @Post('/logout')
+  @HttpCode(200)
   async logout(@Query('token') token) {
     return this.authService.logout(token);
   }

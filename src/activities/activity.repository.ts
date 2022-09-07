@@ -25,7 +25,7 @@ export class ActivityRepository {
       .populate('participants');
 
     if (!activity) {
-      throw new UnprocessableEntityException(`Data cannot be processed`);
+      throw new UnprocessableEntityException();
     }
   }
 
@@ -35,6 +35,10 @@ export class ActivityRepository {
     } catch (e) {
       throw new UnprocessableEntityException(`Data cannot be processed`);
     }
+  }
+
+  async findBySkillName(skillName: string) {
+    return this.activityModel.find({ skill: skillName } );
   }
 
   async findByID(_id: string): Promise<Activity> {

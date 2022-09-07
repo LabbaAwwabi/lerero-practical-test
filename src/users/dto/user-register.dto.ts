@@ -19,5 +19,5 @@ export class UserRegisterDto {
   readonly profile: string;
 
   @IsNotEmpty()
-  readonly skill: Skill[];
+  readonly skill: string[];
 }

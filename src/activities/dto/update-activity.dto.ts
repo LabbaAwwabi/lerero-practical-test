@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateActivityDto } from './create-activity.dto';
-import { IsDate, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsArray, IsDate, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { Transform } from "class-transformer";
 
 export class UpdateActivityDto extends PartialType(CreateActivityDto) {
@@ -24,5 +24,6 @@ export class UpdateActivityDto extends PartialType(CreateActivityDto) {
   readonly enddate: Date;
 
   @IsOptional()
-  readonly participants: string;
+  @IsArray()
+  readonly participants: string[];
 }

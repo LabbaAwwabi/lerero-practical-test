@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "631899e275cd6ad7d8eaabe6"
+  },
+  "skillName": "coding",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631899e275cd6ad7d8eaabea"
+  },
+  "skillName": "bodyswimming",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63189a8d75cd6ad7d8eaabf4"
+  },
+  "skillName": "salto",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63189e2760cda1e31c20cfa6"
+  },
+  "skillName": "running",
+  "__v": 0
+}]
