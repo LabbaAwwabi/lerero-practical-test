@@ -1,0 +1,1544 @@
+{
+	"info": {
+		"_postman_id": "3bf7793d-e35f-4234-b661-b3f0167a9992",
+		"name": "Sample_ServerSide",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1493994"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"labba\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"awwabi\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-pxqqAEzptd8RISgi5Ngz+OFmBRI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Aug 2022 15:17:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF3d2FiaSIsInByb2ZpbGUiOiJib2FyZCIsInN1YiI6IjYzMGIyNWNhNWM0ZWMzZDliNjJmODQxMyIsImlhdCI6MTY2MTc4NjI2NSwiZXhwIjoxNjYxODcyNjY1fQ.g00J8oba70Fbz94XJtJT6TR_BEJxXAOjy68b9hDCF_w\",\n    \"profile\": \"board\"\n}"
+						},
+						{
+							"name": "Invalid Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"awwabi123\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-x7xaxhsd7BEuSbQkQ0CpNDGiu2s\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:03:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"invalid login\",\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/auth/logout?token={{token}}123121121",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}123121121"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/auth/logout?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"auth",
+										"logout"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-ly2C9YqwX619sG4usmFsDNQF3oc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:03:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"logout success\"\n}"
+						},
+						{
+							"name": "Unauthorized user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/auth/logout?token={{token}}123121121",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"auth",
+										"logout"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}123121121"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-Bf2DXD9IFxd9z7IEM/ZdRYvUXGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:11:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Unauthorized user\",\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"fan\",\r\n    \"email\":\"fan@gmail.com\",\r\n    \"username\":\"fan\",\r\n    \"password\":\"123456\",\r\n    \"profile\":\"expert\",\r\n    \"skill\": [\r\n        \"coding\",\"bodyswimming\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/user?token={{token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"qweqweqw\",\r\n    \"email\":\"asdasd@gmail.com\",\r\n    \"username\":\"qadqw\",\r\n    \"password\":\"123456\",\r\n    \"profile\":\"expert\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/user?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF3d2FiaSIsInByb2ZpbGUiOiJib2FyZCIsInN1YiI6IjYzMGIyNWNhNWM0ZWMzZDliNjJmODQxMyIsImlhdCI6MTY2MTc4NjI2NSwiZXhwIjoxNjYxODcyNjY1fQ.g00J8oba70Fbz94XJtJT6TR_BEJxXAOjy68b9hDCF_w",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF3d2FiaSIsInByb2ZpbGUiOiJib2FyZCIsInN1YiI6IjYzMGIyNWNhNWM0ZWMzZDliNjJmODQxMyIsImlhdCI6MTY2MTc4NjI2NSwiZXhwIjoxNjYxODcyNjY1fQ.g00J8oba70Fbz94XJtJT6TR_BEJxXAOjy68b9hDCF_w"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-42urjzLjrpyAFUBtL1FQCw5xXG8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Aug 2022 16:00:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"qweqweqw\",\n    \"email\": \"asdasd@gmail.com\",\n    \"username\": \"qadqw\",\n    \"password\": \"123456\",\n    \"profile\": \"expert\",\n    \"_id\": \"630ce2a41203e34bf61efa82\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Not board user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"fan\",\r\n    \"email\":\"fan@gmail.com\",\r\n    \"username\":\"fan\",\r\n    \"password\":\"123456\",\r\n    \"profile\":\"expert\",\r\n    \"skill\": [\r\n        \"coding\",\"bodyswimming\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/user?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-Bf2DXD9IFxd9z7IEM/ZdRYvUXGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 12:50:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Unauthorized user\",\n    \"error\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "User exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"fan\",\r\n    \"email\":\"fan@gmail.com\",\r\n    \"username\":\"fan\",\r\n    \"password\":\"123456\",\r\n    \"profile\":\"expert\",\r\n    \"skill\": [\r\n        \"coding\",\"bodyswimming\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/user?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"user"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-8dUoN8WPOc0KXiYJ22GfJtKCkzU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:17:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"message\": \"Data cannot be processed\",\n    \"error\": \"Unprocessable Entity\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Training Activity",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skill\":\"running\",\r\n    \"title\":\"run together\",\r\n    \"description\":\"lari lari lari\",\r\n    \"startdate\":\"2022-09-01\",\r\n    \"enddate\":\"2022-09-01\",\r\n    \"participants\": [\"fan\",\"labba\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/activity?token={{token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"activity"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\":\"coding\",\r\n    \"title\":\"golang expert\",\r\n    \"description\":\"hackaton 5 hari\",\r\n    \"startdate\":\"2022-09-01\",\r\n    \"enddate\":\"2022-09-01\",\r\n    \"participants\": [\"fan\",\"labba\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/activity?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e-qV7zojct+N5/MPpbeHP1jdmJ2wo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:21:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "create success"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\":\"coding\",\r\n    \"title\":\"golang expert\",\r\n    \"description\":\"hackaton 5 hari\",\r\n    \"startdate\":\"2022-09-01\",\r\n    \"enddate\":\"2022-09-01\",\r\n    \"participants\": [\"awwabi123\",\"labba\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/activity?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-Bf2DXD9IFxd9z7IEM/ZdRYvUXGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:18:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Unauthorized user\",\n    \"error\": \"Unauthorized\"\n}"
+						},
+						{
+							"name": "400 bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\":\"coding\",\r\n    \"title\":\"golang expert\",\r\n    \"description\":\"hackaton 5 hari\",\r\n    \"startdate\":\"2022-09-01 123\",\r\n    \"enddate\":\"2022-09-01cc123\",\r\n    \"participants\": [\"awwabi123\",\"labba\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/activity?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7a-S2/gJoDYAe6TF4T8lnaZ1/Lmfb8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:20:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"startdate must be a Date instance\",\n        \"enddate must be a Date instance\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"skill\":\"coding\",\r\n    \"title\":\"golang expert\",\r\n    \"description\":\"hackaton 5 hari\",\r\n    \"startdate\":\"2022-09-01\",\r\n    \"enddate\":\"2022-09-01\",\r\n    \"participants\": [\"awwabi123\",\"labba\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/activity?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-8dUoN8WPOc0KXiYJ22GfJtKCkzU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:21:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"message\": \"Data cannot be processed\",\n    \"error\": \"Unprocessable Entity\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startdate\":\"2022-09-01 07:00\",\r\n    \"enddate\":\"2022-09-01 10:00\",\r\n    \"participants\": [\"labba\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/activity/63188fa8579113b4974d2c12?token={{token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"activity",
+								"63188fa8579113b4974d2c12"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/activity/63189031af9b41980bef1d66111?token={{token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"activity",
+								"63189031af9b41980bef1d66111"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/activity/63189031af9b41980bef1d66?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity",
+										"63189031af9b41980bef1d66"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e-r6qqFVRZ8PxQ7e53QbOAv2IFZNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 12:36:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "update success"
+						},
+						{
+							"name": "Invalid ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/v1/activity/63189031af9b41980bef1d66111?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity",
+										"63189031af9b41980bef1d66111"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-8dUoN8WPOc0KXiYJ22GfJtKCkzU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 12:36:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"message\": \"Data cannot be processed\",\n    \"error\": \"Unprocessable Entity\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List by SkillID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/activity/63189a8d75cd6ad7d8eaabf4?token={{token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"activity",
+								"63189a8d75cd6ad7d8eaabf4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/v1/activity/63189e2760cda1e31c20cfa6?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity",
+										"63189e2760cda1e31c20cfa6"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "667"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29b-nOjYY+ejOJBaQHGAeifxkwcIW/M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:52:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6318a166dfb15a58405a70ba\",\n        \"skill\": \"running\",\n        \"title\": \"run together\",\n        \"description\": \"lari lari lari\",\n        \"startdate\": \"2022-09-01T00:00:00.000Z\",\n        \"enddate\": \"2022-09-01T00:00:00.000Z\",\n        \"participants\": [\n            \"fan\",\n            \"labba\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6318a198b15121238793b9f3\",\n        \"skill\": \"running\",\n        \"title\": \"run together\",\n        \"description\": \"lari lari lari\",\n        \"startdate\": \"2022-09-01T00:00:00.000Z\",\n        \"enddate\": \"2022-09-01T00:00:00.000Z\",\n        \"participants\": [\n            \"fan\",\n            \"labba\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6318a1c54bff311482d2d5cd\",\n        \"skill\": \"running\",\n        \"title\": \"run together\",\n        \"description\": \"lari lari lari\",\n        \"startdate\": \"2022-09-01T00:00:00.000Z\",\n        \"enddate\": \"2022-09-01T00:00:00.000Z\",\n        \"participants\": [\n            \"fan\",\n            \"labba\"\n        ],\n        \"__v\": 0\n    }\n]"
+						},
+						{
+							"name": "Empty",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/v1/activity/63189a8d75cd6ad7d8eaabf4?token={{token}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity",
+										"63189a8d75cd6ad7d8eaabf4"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:53:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/v1/activity/63189a8d75cd6ad7d8eaabf4?token={{token}}1111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"activity",
+										"63189a8d75cd6ad7d8eaabf4"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}1111"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-Bf2DXD9IFxd9z7IEM/ZdRYvUXGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 07 Sep 2022 13:53:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Unauthorized user\",\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "List All Skill",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/v1/skills?token={{token}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"skills"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List All Skill",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/skills?token={{token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"skills"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "263"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"107-oqrjrgBlUB1NVoJJUj7QbYklD3o\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Sep 2022 13:54:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"631899e275cd6ad7d8eaabe6\",\n        \"skillName\": \"coding\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"631899e275cd6ad7d8eaabea\",\n        \"skillName\": \"bodyswimming\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63189a8d75cd6ad7d8eaabf4\",\n        \"skillName\": \"salto\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"63189e2760cda1e31c20cfa6\",\n        \"skillName\": \"running\",\n        \"__v\": 0\n    }\n]"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/skills?token={{token}}111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"skills"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}111"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-Bf2DXD9IFxd9z7IEM/ZdRYvUXGA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 07 Sep 2022 13:54:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Unauthorized user\",\n    \"error\": \"Unauthorized\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxhYmJhIiwicHJvZmlsZSI6ImV4cGVydCIsInN1YiI6IjYzMTg4MjdhNzFjZWU5ZTJkMDVjYzlkYyIsImlhdCI6MTY2MjU1MDY1NSwiZXhwIjoxNjYyNjM3MDU1fQ.ZlWKhyus0NC3YJn1Onv4HaX-ouFxlrhb7FPQU2dGgMQ",
+			"type": "string"
+		}
+	]
+}
